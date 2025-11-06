@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="sort_options">
+        <item>All</item>
+        <item>Upcoming</item>
+        <item>Past</item>
+        <item>Date</item>
+    </string-array>
+</resources>

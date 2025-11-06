@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -102,8 +103,11 @@ public class create_match_activity extends AppCompatActivity {
                 Toast.makeText(this, "Please select both teams", Toast.LENGTH_SHORT).show();
             }
         });
-    }
 
+        ImageView backBtn = findViewById(R.id.backBtn);
+        backBtn.setOnClickListener(v -> showExitConfirmationDialog());
+
+    }
     private void showTeamSelector(int teamNumber) {
         List<Team> teams = teamHelper.getAllTeams();
         SelectTeamBottomSheet bottomSheet = new SelectTeamBottomSheet(
@@ -177,4 +181,19 @@ public class create_match_activity extends AppCompatActivity {
                 true
         ).show();
     }
+
+    private void showExitConfirmationDialog() {
+        new androidx.appcompat.app.AlertDialog.Builder(this)
+               .setTitle("Discard Changes")
+                .setMessage("Match will not be created.Do you want to exit?")
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    dialog.dismiss();
+                    finish(); // Close the activity
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out); // Optional animation
+                })
+                .setNegativeButton("No", (dialog, which) -> dialog.dismiss())
+                .setCancelable(true)
+                .show();
+    }
+
 }

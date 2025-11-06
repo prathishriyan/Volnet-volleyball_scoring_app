@@ -1,4 +1,4 @@
-package com.example.volnet.adapter;
+package com.example.volnet;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,9 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.volnet.Match;
 import com.example.volnet.R;
 // FIX 1: Changed import to use your confirmed model class, Match1
-import com.example.volnet.app.model.Match1;
 
 import java.util.List;
 import java.util.Locale;
@@ -21,16 +22,16 @@ import java.util.function.Consumer;
 // FIX 2 & 3: Updated all references from Match to Match1
 public class MatchHistoryAdapter extends RecyclerView.Adapter<MatchHistoryAdapter.MatchViewHolder> {
 
-    private final List<Match1> matchList;
+    private final List<Match> matchList;
     private final Consumer<Integer> onDeleteClickListener;
-    private final Consumer<Match1> onExportClickListener; // Use Match1 here
+    private final Consumer<Match> onExportClickListener; // Use Match1 here
     private int expandedPosition = -1;
 
     public MatchHistoryAdapter(
             Context context,
-            List<Match1> matchList, // Use List<Match1> here
+            List<Match> matchList, // Use List<Match1> here
             Consumer<Integer> onDeleteClickListener,
-            Consumer<Match1> onExportClickListener // Use Consumer<Match1> here
+            Consumer<Match> onExportClickListener // Use Consumer<Match1> here
     ) {
         this.matchList = matchList;
         this.onDeleteClickListener = onDeleteClickListener;
@@ -46,13 +47,13 @@ public class MatchHistoryAdapter extends RecyclerView.Adapter<MatchHistoryAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MatchViewHolder holder, int position) {
-        // Use Match1 here
-        Match1 match = matchList.get(position);
+        // Use Match here
+        Match match = matchList.get(position);
 
         // --- HEADER BINDING ---
         String teamA = match.getTeamAName();
         String teamB = match.getTeamBName();
-        String winnerName = match.getWinnerName();
+        String winnerName = match.getWinner();
 
         holder.teamAName.setText(teamA);
         holder.teamBName.setText(teamB);
@@ -67,16 +68,39 @@ public class MatchHistoryAdapter extends RecyclerView.Adapter<MatchHistoryAdapte
 
         // --- EXPANDED DETAILS BINDING ---
         if (isExpanded) {
-            holder.expandedMatchDateTime.setText(String.format(Locale.getDefault(), "%s, %s", match.getDate(), match.getTime()));
-            holder.expandedTeamsText.setText(String.format(Locale.getDefault(), "%s vs %s", teamA, teamB));
+            holder.expandedMatchDateTime.setText(String.format(Locale.getDefault(), "%s , %s", match.getDate(), match.getTime()));
+            holder.expandedTeamsText.setText(String.format(Locale.getDefault(), "%s  vs   %s", teamA, teamB));
 
             holder.expandedWinnerText.setText(String.format("Winner: %s", winnerName));
 
             // Using match.getFinalScore()
-            holder.expandedFinalScore.setText(String.format("Final Score: %s", match.getFinalScore()));
+           // holder.expandedFinalScore.setText(String.format("Final Score: %s", match.getFinalScore()));
+
+            if (match.getTeamASets() != null && match.getTeamBSets() != null
+                    && !match.getTeamASets().isEmpty() && !match.getTeamBSets().isEmpty()) {
+
+                StringBuilder scoreBuilder = new StringBuilder("Final Score: ");
+                for (int i = 0; i < match.getTeamASets().size(); i++) {
+                    scoreBuilder.append(match.getTeamASets().get(i))
+                            .append(" - ")
+                            .append(match.getTeamBSets().get(i));
+                    if (i < match.getTeamASets().size() - 1) scoreBuilder.append(" | ");
+                }
+
+                holder.expandedFinalScore.setText(scoreBuilder.toString());
+            } else {
+                holder.expandedFinalScore.setText(String.format("Final Score: %s", match.getFinalScore()));
+            }
+
 
             // Placeholder/Dummy data for timeouts
-            holder.expandedTimeoutsText.setText("Timeouts: Team A → 2 used | Team B → 1 used");
+            holder.expandedTimeoutsText.setText(String.format(
+                    Locale.getDefault(),
+                    "Timeouts: Team A → %d  remaining | Team B → %d  remaining",
+                    match.getTimeoutA(),
+                    match.getTimeoutB()
+            ));
+
         }
 
         // --- CLICK LISTENERS ---
@@ -105,7 +129,7 @@ public class MatchHistoryAdapter extends RecyclerView.Adapter<MatchHistoryAdapte
         // 3. Export Button (Inside the expanded layout)
         holder.exportButton.setOnClickListener(v -> {
             if (onExportClickListener != null) {
-                // Passes the Match1 object
+                // Passes the Match object
                 onExportClickListener.accept(match);
             }
         });

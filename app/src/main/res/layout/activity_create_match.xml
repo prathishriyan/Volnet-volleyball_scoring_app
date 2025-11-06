@@ -21,7 +21,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="18dp"
             android:contentDescription="@string/back"
-            android:src="@drawable/back"
+            android:src="@drawable/outline_arrow_back_24"
             app:tint="@color/black" />
 
         <TextView
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/create_match_app"
+            android:text="CREATE MATCH"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -182,7 +182,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/default_rules"
+        android:text="@string/default_rule"
         android:textStyle="bold"
         android:textSize="13sp"
         android:textColor="@color/textBlack"
@@ -192,7 +192,7 @@
 
     <!-- Create Match Button -->
     <LinearLayout
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="16dp"

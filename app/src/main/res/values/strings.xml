@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Volnet</string>
-    <string name="add_teams">Add Teams</string>
+    <string name="add_teams">Add Team</string>
     <string name="add_team_logo">add_team_logo</string>
     <string name="delete_player">delete the player</string>
     <string name="player_icon">add player icon</string>
@@ -23,7 +23,7 @@
 
     <!-- Match Rules -->
     <string name="match_rules">MATCH RULES</string>
-    <string name="default_rules">DEFAULT</string>
+    <string name="default_rule">DEFAULT</string>
     <string name="rule_best_of">• Best of 5 sets</string>
     <string name="rule_points_set">• Points to win set: 25</string>
     <string name="rule_points_tiebreak">• Points to win tie break: 15</string>
@@ -40,7 +40,7 @@
 
     <!-- Team Scoring Activity -->
 
-    <string name="team_scoring_app_name">Team Scoring</string>
+    <string name="team_scoring_app_name">Match Scoring</string>
     <string name="team_a">Team A</string>
     <string name="team_b">Team B</string>
     <string name="take_timeout">Take Timeout(%1$d)</string>
@@ -59,9 +59,108 @@
     <string name="zero">0</string>
 
 
-    <string name="timeout_team_a">Timeout(2)</string>
-    <string name="timeout_team_b">Timeout(2)</string>
+    <string name="timeout_team_a">Timeout</string>
+    <string name="timeout_team_b">Timeout</string>
 
     <string name="end_match">End Match</string>
+
+
+    <!-- history xml-->
+    <string name="history_icon">History Icon</string>
+    <string name="history_title">HISTORY</string>
+    <string name="search_hint">Search</string>
+    <string name="sort_label">Sort</string>
+    <string name="sort">Sort</string>
+
+
+    <string name="rules_icon">Rules Icon</string>
+    <string name="rules_title">RULES</string>
+    <string name="default_label">DEFAULT</string>
+    <string name="default_rules">
+        \u2022 Best of 5 sets\n
+        \u2022 Points to win set: 25\n
+        \u2022 Points to win tie break: 15
+    </string>
+
+    <string name="close">Close</string>
+    <string name="confirm_delete_title">Are you sure?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="team_a_winner">Team A Winner</string>
+    <string name="team_b_winner">Team B Winner</string>
+    <string name="vs_text">VS  </string>
+    <string name="delete_match">Delete Match</string>
+    <string name="more_options">More Options</string>
+    <string name="trophy_icon">Trophy Icon</string>
+    <string name="export">EXPORT</string>
+
+    <string name="rules">RULES</string>
+    <string name="team_management">MANAGE TEAM</string>
+    <string name="history"> MATCH HISTORY</string>
+    <string name="match">CREATE MATCH</string>
+
+    <!-- ADD TEAM -->
+    <string name="team_name">Team Name</string>
+    <string name="enter_team_name">Enter Team Name</string>
+    <string name="team_players">Team Players</string>
+    <string name="player_hint_1">Player 1</string>
+    <string name="save">Save</string>
+
+
+    <!-- Titles -->
+    <string name="title_add_team">Add Team</string>
+
+    <!-- Hints -->
+    <string name="hint_team_name">Enter Team Name</string>
+    <string name="hint_captain_name">Enter Captain Name</string>
+    <string name="label_players">Player Names</string>
+
+    <!-- Player hints -->
+    <string name="hint_player1">Player 1 Name</string>
+    <string name="hint_player2">Player 2 Name</string>
+    <string name="hint_player3">Player 3 Name</string>
+    <string name="hint_player4">Player 4 Name</string>
+    <string name="hint_player5">Player 5 Name</string>
+    <string name="hint_player6">Player 6 Name</string>
+    <string name="hint_player7">Player 7 Name</string>
+    <string name="hint_player8">Player 8 Name</string>
+    <string name="hint_player9">Player 9 Name</string>
+    <string name="hint_player10">Player 10 Name</string>
+    <string name="hint_player11">Player 11 Name</string>
+
+    <!-- Buttons -->
+    <string name="btn_save">Save Team</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- Content descriptions (accessibility) -->
+    <string name="content_back_button">Navigate back</string>
+    <string name="content_title_add_team">Add Team title</string>
+    <string name="content_logo">App logo</string>
+    <string name="content_team_name_input">Input field for team name</string>
+    <string name="content_captain_name_input">Input field for captain name</string>
+    <string name="content_players_label">Section for entering player names</string>
+    <string name="content_player1_input">Input for player 1 name</string>
+    <string name="content_player2_input">Input for player 2 name</string>
+    <string name="content_player3_input">Input for player 3 name</string>
+    <string name="content_player4_input">Input for player 4 name</string>
+    <string name="content_player5_input">Input for player 5 name</string>
+    <string name="content_player6_input">Input for player 6 name</string>
+    <string name="content_player7_input">Input for player 7 name</string>
+    <string name="content_player8_input">Input for player 8 name</string>
+    <string name="content_player9_input">Input for player 9 name</string>
+    <string name="content_player10_input">Input for player 10 name</string>
+    <string name="content_player11_input">Input for player 11 name</string>
+    <string name="content_save_button">Button to save team details</string>
+    <string name="content_cancel_button">Button to cancel team creation</string>
+    <string name="add_sub">Add substitutes</string>
+
+    <string name="search_team">Search a Team</string>
+
+    <string name="edit_team">Edit Team</string>
+
+    <string name="scoring">Scoring</string>
+    <string name="matches">Matches</string>
+
 </resources>
 

@@ -17,7 +17,7 @@ import java.util.List;
 public class SelectTeamBottomSheet extends BottomSheetDialogFragment {
 
     private RecyclerView recyclerView;
-    private TeamAdapter adapter;
+    private TeamSelectionAdapter adapter;
     private List<Team> teamList;
 
     public interface TeamSelectionListener {
@@ -40,7 +40,7 @@ public class SelectTeamBottomSheet extends BottomSheetDialogFragment {
         recyclerView = view.findViewById(R.id.recyclerViewTeams);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter = new TeamAdapter(teamList, team -> {
+        adapter = new TeamSelectionAdapter(teamList, team -> {
             selectionListener.onTeamSelected(team);
             dismiss();
         });

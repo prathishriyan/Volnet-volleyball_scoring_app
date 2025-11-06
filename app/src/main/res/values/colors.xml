@@ -42,4 +42,11 @@
     <color name = "gold">#FFC107</color>
     <color name = "light_grey_background">#808080</color>
 
+    <color name="button_enabled">#393A3A</color> <!-- Teal green -->
+    <color name="button_disabled">#BDBDBD</color> <!-- Gray -->
+
+
+
+
+
 </resources>

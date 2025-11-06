@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <!-- Jersey Icon -->
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_jersey"
+        app:tint="@color/textGray"
+        android:contentDescription="@string/player_icon" />
+
+    <!-- Player Name EditText -->
+    <EditText
+        android:id="@+id/et_player_name"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:autofillHints="0"
+        android:background="@drawable/edit_text_background"
+        android:textColorHint="@color/textGray"
+        android:hint="@string/label_players"
+        android:inputType="textPersonName|textCapWords"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:singleLine="true"
+        android:textColor="#333333"
+        android:textSize="12sp"  />
+
+    <!-- Delete Button -->
+    <ImageView
+        android:id="@+id/iv_delete_player"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="4dp"
+        android:src="@drawable/ic_delete"
+        app:tint="@color/primaryRed"
+        android:contentDescription="@string/delete_player" />
+</LinearLayout>

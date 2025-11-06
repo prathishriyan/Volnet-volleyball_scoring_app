@@ -45,4 +45,15 @@
     <style name="BottomNavSmallText" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">10sp</item> <!-- Smaller text size -->
     </style>
+
+
+        <style name="PlayerInput">
+            <item name="android:layout_width">match_parent</item>
+            <item name="android:layout_height">wrap_content</item>
+            <item name="android:layout_marginTop">8dp</item>
+            <item name="android:background">@color/light_grey_background</item>
+            <item name="android:padding">10dp</item>
+            <item name="android:textColor">@android:color/black</item>
+            <item name="android:textSize">16sp</item>
+        </style>
 </resources>

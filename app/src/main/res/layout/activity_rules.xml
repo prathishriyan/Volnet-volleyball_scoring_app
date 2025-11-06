@@ -9,13 +9,15 @@
     android:background="@android:color/white"
     tools:context=".RulesActivity">
 
+    <!-- Header -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header_layout"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:background="#D32F2F"
+        android:paddingTop="20dp"
+        android:background="@color/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -24,12 +26,13 @@
             android:id="@+id/back_arrow"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:contentDescription="Back"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/back"
             android:src="@drawable/outline_arrow_back_24"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:tint="@android:color/black" />
+            app:tint="@color/black" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -41,20 +44,23 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/rules"
-                android:contentDescription="Rules Icon"
-                android:layout_marginEnd="8dp"
-                app:tint="@android:color/black" />
+            <!--            <ImageView-->
+            <!--                android:id="@+id/history_icon"-->
+            <!--                android:layout_width="30dp"-->
+            <!--                android:layout_height="30dp"-->
+            <!--                android:src="@drawable/history"-->
+            <!--                android:contentDescription="@string/history_icon"-->
+            <!--                android:layout_marginEnd="4dp"-->
+            <!--                app:tint="@color/black" />-->
 
             <TextView
+                android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:text="RULES"
-                android:textColor="@android:color/black"
-                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -71,8 +77,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:orientation="vertical"
+            android:gravity="center_horizontal"
             android:padding="16dp">
 
             <TextView
@@ -80,21 +87,33 @@
                 android:layout_height="wrap_content"
                 android:text="DEFAULT"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textColor="@color/black"
                 android:layout_marginBottom="12dp" />
 
             <TextView
                 android:id="@+id/rules_list"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:layout_height="137dp"
+                android:text="@string/default_rules"
                 android:textColor="@color/black"
-                android:text="@string/default_rules" />
+                android:textSize="20sp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
